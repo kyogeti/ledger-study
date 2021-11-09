@@ -28,7 +28,6 @@ namespace LedgerStudy.Infra.Context
         }
 
         public Account GetAccountDetails(Guid accountId) => _context.Accounts
-            .Include(x => x.Entries)
             .Where(x => x.Id == accountId)?
             .FirstOrDefault();
 
